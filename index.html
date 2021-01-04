@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--управлять размерами и расположением элементов, задавать отступы и рамки, а также рассмотрим типы элементов и их особенности--> 
+  <!-- 1. Блочные боксы -->
+  <h1>Типы боксов</h1>
+  <div>
+    <h2>Блочные</h2>
+    <h2>Строчные</h2>
+    <p></p>
+      <div><p></p></div>
+      <div></div>
+  </div>
+<!-- 2. Строчные боксы <a>, <strong>, <em>, <span></span>-->
+    <h1>Строчные боксы</h1>
+    <p><em>Строчные боксы</em> <strong>не создают переносов</strong> 
+        <span>строки</span> до и после себя. Такие боксы располагаются в строке слева направо.
+         Если <em>строчный бокс</em> <span>не помещается в <em>родительский</em> контейнер</span>,
+          то он переносится на следующую строку.<span>Span</span> должен быть <span>в блочном боксе.</span></p>
+           <span>Span</span> должен быть <span>в блочном боксе.</span>
+<!-- 3. Ширина и высота-->
+       <div class="example">
+           Блочные боксы по умолчанию занимают всю доступную ширину. Их высота зависит от содержания.
+        </div>
+        <div>
+            <span class="example">
+                Размеры строчных боксов полностью зависят от их содержания и с помощью CSS не изменяются.
+            </span>
+        </div>
+<!-- 4. Внутренние отступы, свойство padding -->
+       <section class="p1">Блок 1</section>
+       <article class="p2">Блок 2</article>
+       <div class="p3">Блок 3</div>
+           <div class="paddings">
+               <span class="p1">Текст 1</span>
+               <span class="p2">Текст 2</span>
+               <span class="p3">Текст 3</span>
+          </div>
+<!-- 5. Внешние отступы, свойство margin -->
+        <div class="out">
+              <div class="m1">Блок 1</div>
+              <div class="m2">Блок 2</div>
+              <div class="m3">Блок 3</div>
+        </div>
+        <div class="out">
+              <span class="m1">Текст 1</span>
+              <br/>
+              <span class="m2">Текст 2</span>
+              <br/>
+              <span class="m3">Текст 3</span>
+              <br/>
+        </div>
+<!-- 6. Рамки -->
+                <div class="b1"></div>
+                <div class="b2"></div>
+                <div class="b3"></div>
+            <div>
+               <span class="b1">Рамка 1</span>
+               <span class="b2">Рамка 2</span>
+               <span class="b3">Рамка 3</span>
+            </div>
+<!-- 7. Стандартная блочная модель 
+        Область, занимаемая блочным боксом,
+        cкладывается из его ширины и высоты содержания, внутренних и внешних отступов, ширины рамок. -->
+        <div class="block block1"><h2>Блок 1</h2></div>
+        <div class="block block1"><h3>Блок 1</h3></div>
+        <div class="block block2">Блок 2</div>
+        <div class="block block3">Блок 3</div>
+<!-- 8. Испытание - сетка на фоне  Размеры маленькой ячейки — 20 на 20 пикселей, большой ячейки — 100 на 100 пикселей , блоки ставим на место-->
+        <div class="blocks-color block-4">Блок 1</div>
+        <div class="blocks-color block-5">Блок 2</div>
+<!-- 9. «Схлопывание» внешних отступов: вертикальное, Если отступ одного элемента равен 50px, а второго 30px, то отступ между ними будет 50px:
+                                        горизонтальный: отступ между двумя элементами с отступами 30px будет равен 60px -->
+        <div class="block-margin block-6">Блок 1</div>
+        <div class="block-margin block-7">Блок 2</div>
+
+<!-- 10. Выпадание внешних отступов, вертикальных -->
+      <div class="block-8">
+               <div class="block-9">
+                   Блок 9
+               </div>
+        Блок 8
+      </div>
+
+<!-- 10. Выпадание внешних отступов, вертикальных -->
+      <div class="block-10">
+               <div class="block-11">
+                   Блок 11 
+               </div>
+        Блок 10
+      </div>
+
+<!-- 10. Выпадание внешних отступов, вертикальных -->
+      <div class="block-12">
+               <div class="block-13">
+                   Блок 13 
+               </div>
+        Блок 12
+      </div>
+
+<!-- 10. Центруем блочные элементы  -->
+<!-- 1. Задать элементу ширину, которая меньше ширины родительского контейнера. -->
+<!-- 2. Задать для внешних отступов справа и слева значение auto. -->
+
+    <div class="block-14">Блок 14</div>
+
+<!-- 12/ Блочная модель и строчные боксы -->
+ <p class="example-1">Элементы со <em>строчным боксом</em> воспринимают лишь часть свойств <em>блочной модели</em>. В частности, они не реагируют на <em>ширину</em> и <em>высоту</em>, но частично реагируют на <em>отступы</em>, а <em>рамки</em> воспринимают отлично.</p>
+    
+ <p class="example-1">Горизонтальные рамки и отступы увеличивают размер элементов со <em>строчным боксом</em>, а вертикальные визуально увеличивают размер, но не занимаемое элементом пространство.</p>
+
+<!-- 13. Ширина 100% и ширина по умолчанию -->
+
+<h4 class="color-block-15"> width задаёт не общую ширину блока, а только ширину содержания. Общая ширина блока затем складывается из трёх компонентов: ширины содержания, внутренних отступов и ширины рамок слева и справа.</h3>
+
+<div class="block-15">
+  block-15
+<div class="example-2"> По умолчанию: width: auto;
+Блок занимает всю ширину родительского блока. Если у блока есть внутренние отступы или рамки, то его ширина содержания автоматически уменьшается, а общая ширина остаётся равной ширине родителя
+</div>
+<div class="example-3"> width: 100%;. В этом случае ширина содержания блока равна ширине родительского блока. Если блоку добавить внутренние отступы и рамки, то его общая ширина становится больше ширины родителя. </div>
+</div>
+
+
+<div class="container">
+  container<br>
+  Ширина содержания: 300px<br>
+  Ширина общая: 340px
+    <div class="block18 block-18" >
+    style="width: auto;"    
+    содержания: 260px; <br>
+    общая: 300px;
+  </div> 
+  <div class="block18 block-19" > 
+    style="width: 100%;
+    содержания: 300px; <br>
+    общая: 340px;
+  </div>
+</div>
+
+<!-- 14.  Особенности применения width: 100% -->
+
+
+<form class="form" action="https://echo.htmlacademy.ru/courses" method="post">
+  <div class="block-20" style="width: 200px;">
+        Форма - поля должны занимать всю ширину контейнера 
+        иметь фиксированные внутренние отступы, чтобы текст не прилипал к краям
+        Ширина 100% заставит поля быть такой же ширины, как родительский блок, а паддинг добавит отступы.
+        Но, как вы уже догадались, за счёт отступов поле станет шире своего контейнера. И эта особенность создаёт проблему.
+    <input type="text" value="Фамилия">
+  </div>
+  <div class="block-20" style="width: 250px;">
+    <input type="text" value="Имя">
+  </div>
+  <div class="block-20" style="width: 300px;">
+    <input type="text" value="Отчество">
+  </div>
+</form>
+
+<form class="form" action="https://echo.htmlacademy.ru/courses" method="post">
+  <div class="block-20" style="width: 200px;">
+        Решение проблемы : box-sizing: border-box;
+    <input type="text-1" value="Фамилия">
+  </div>
+  <div class="block-20" style="width: 250px;">
+    <input type="text-1" value="Имя">
+  </div>
+</form>
+
+<!-- 15. Изменяем блочную модель, свойство box-sizing -->
+<div class="example-4">
+       <div class="example-5">http://simonenko.su/32197993404/use-css3-box-sizing </div>
+       <div class="example-6">box-sizing = content-box + border-box. Позволяет не учитывать в размерах блока отступы и границы</div>
+       <div class="example-6"> указывая размеры блоку, вы указываете их всему блоку, а не содержимому</div>
+       <textarea> box-sizing: border-box;</textarea>
+</div>
+
+<!-- 16. Второе испытание -->
+<div class="example-7 block-16">
+  Блок - родитель
+    <div class="example-7 block-17">
+        <input class="text-input" type="text"  value="Значение поля - input" />
+    </div>
+  </div>
+
+  <!-- 17. Управление типом бокса, свойство display -->
+  <p class="paragraph-1">По умолчанию абзац &lt;p&gt; является элементом с <strong class="strong-1">блочным боксом</strong>.
+                         А тег &lt;strong&gt; — элементом со <strong class="strong-1">строчным боксом</strong>.</p>
+  <p class="paragraph-1">Но это поведение можно изменить с помощью CSS.</p>
+  <p class="paragraph-1">Вообще для любого элемента.</p>
+  <br>
+  <p class="paragraph-2">По умолчанию абзац &lt;p&gt; является элементом с <strong class="strong-2">блочным боксом</strong>.
+    А тег &lt;strong&gt; — элементом со <strong class="strong-2">строчным боксом</strong>.</p>
+    <p class="paragraph-2">Но это поведение можно изменить с помощью CSS.</p>
+    <p class="paragraph-2">Вообще для любого элемента.</p>
+    <br>
+  <p class="paragraph-3">По умолчанию абзац &lt;p&gt; является элементом с <strong class="strong-3">блочным боксом</strong>.
+    А тег &lt;strong&gt; — элементом со <strong class="strong-3">строчным боксом.</strong> Но это поведение можно изменить с помощью CSS. Вообще для любого элемента.</p>
+    
+    <!-- 18. Свойство display: inline-block --> 
+    <div class="column column-1">
+      Блок 1 <br>
+      Особенности элементов с блочно-строчным боксом - display:inline-block;
+    </div>
+    <div class="column column-2">
+      Блок 2 <br>
+      - им можно задавать размеры, рамки и отступы, как и элементам с блочным боксом;
+    - их ширина по умолчанию зависит от содержания, а не растягивается на всю ширину контейнера;
+    </div>
+    <div class="column column-3">
+      Блок 3 <br>
+      - они не порождают принудительных переносов строк, поэтому могут располагаться на одной строке, пока помещаются в родительский контейнер;
+      элементы в одной строке выравниваются вертикально подобно элементам со строчным боксом.
+      <br>
+      При увеличении содержания и переполнении не помещается в блок 
+    </div>
+
+    <div class="column-ib column-4">
+      Блок 1 <br>
+      Особенности элементов с блочно-строчным боксом - display:inline-block;
+    </div>
+    <div class="column-ib column-5">
+      Блок 2 <br>
+      - им можно задавать размеры, рамки и отступы, как и элементам с блочным боксом;
+    - их ширина по умолчанию зависит от содержания, а не растягивается на всю ширину контейнера;
+    </div>
+    <div class="column-ib column-6">
+      Блок 3 <br>
+      - они не порождают принудительных переносов строк, поэтому могут располагаться на одной строке, пока помещаются в родительский контейнер;
+      элементы в одной строке выравниваются вертикально подобно элементам со строчным боксом.
+      <br>
+      <b>При увеличении содержания и переполнении не помещается в блок </b>
+    </div>
+
+  <!-- 19. Свойство "таблица" display: table --> 
+  <div>Первое значение — display: table задаёт боксу элемента тип таблица.<br>
+      <ul>Особенности элементов с табличным боксом:
+        <li>- можно задавать ширину, высоту, рамки, отступы;</li>
+        <li>- по умолчанию ширина зависит от содержания;</li>
+        <li>- переносы строки до и после элемента.</li>
+        <li>Табличный тип бокса похож на блочный за исключением ширины по умолчанию.</li>
+        <strong class="strong-1">Задаем для родителя таблицы table</strong>
+      </ul>
+  </div>
+  <h3>Посещения по городам</h3>
+  <div class="table table-border">
+    <div class="row">
+      <div class="cell">Город</div>
+      <div class="cell">Посещения</div>
+      <div class="cell">Страниц</div>
+      <div class="cell">Время</div>
+    </div>
+    <div class="row">
+      <div class="cell">СПБ</div>
+      <div class="cell">500</div>
+      <div class="cell">6</div>
+      <div class="cell">00:08:05</div>
+    </div>
+  </div>
+
+   <!-- 20. Свойство "таблица" display: table-row; --> 
+   <div>Любая таблица содержит элементы с типом бокса строка таблицы, <br> внутри которых 
+    должны содержаться элементы с типом бокса ячейка таблицы. 
+    <ul>Соответствие тегов таблицы значениям display:
+      <li>— display: table;</li>
+      <li>— display: table-row;</li>
+      <li>— display: table-cell. <strong class="strong-1">создает две колонки таблицы</strong></li>
+      Строка таблицы — необычный элемент.<br>
+      Она является контейнером для ячеек и практически не имеет собственного отображения.<br>
+    Для неё можно только задавать цвет фона. <strong class="strong-1">Задаем для дочернего элемента таблицы row</strong>
+    </ul>
+</div>
+
+<div class="table-1 table-border-1">
+  <div class="row-1">
+    <div class="cell">Город</div>
+    <div class="cell">Посещения</div>
+    <div class="cell">Страниц</div>
+    <div class="cell">Время</div>
+  </div>
+  <div class="row-1">
+    <div class="cell">СПБ</div>
+    <div class="cell">500</div>
+    <div class="cell">6</div>
+    <div class="cell">00:08:05</div>
+  </div>
+   </div>
+  
+   <!-- 20. Свойство "таблица" display: table-cell; --> 
+   <div>С помощью значения table-cell свойства display можно задать боксу элемента тип ячейка таблицы.
+        
+    <ul>display: table-cell; <br>
+       <strong class="strong-1">Задаем для дочернего элемента таблицы .row или .cell</strong> <br>
+          <li>— лучше чтобы элементы-ячейки находились внутри элементов-строк, которые находятся внутри элементов-таблиц.</li>
+      <li>— просто задать боксу элемента тип ячейка таблицы, не добавляя вокруг него дополнительных элементов-строк и таблиц</li>
+      <li>— браузер создаст дополнительные анонимные элементы строки и таблицы. <strong class="strong-1">Недостаток - не сможете ими управлять</strong></li>
+      </ul>
+      К таблицам, созданным с помощью CSS, можно применять те же свойства, что и к обычным таблицам.
+      Например, задавать отступы между ячейками или режим схлопывания границ.
+      <br>
+      
+    
+</div>
+
+   <div class="table-2 table-border-2">
+    <div class="row-2">
+      <div class="cell">Город</div>
+      <div class="cell">Посещения</div>
+      <div class="cell">Страниц</div>
+      <div class="cell">Время</div>
+    </div>
+    <div class="row-2">
+      <div class="cell">СПБ</div>
+      <div class="cell">500</div>
+      <div class="cell">6</div>
+      <div class="cell">00:08:05</div>
+    </div>
+  
+  <span>тег br для отступов можно использовать, но лучше CSS</span><br>
+  <span>/* внутренние отступы по таблице - padding - цвет - grey*/<br>
+        /* внешние отступы по таблице - margin */<br>
+        /* border-spacing: 5px; Отступы между ячейками- цвет - grey*/ </span>
+  
+    
+   <div class="table-3">                               <!--    Дополнительная вложенность  -->
+  <div class="row-3">
+      <div class="cell-3">Город</div>
+      <div class="cell-3">Посещения</div>
+      <div class="cell-3">Страниц</div>
+      <div class="cell-3">Время</div>
+    </div>
+    <div class="row-3">
+      <div class="cell-3">СПБ</div>
+      <div class="cell-3">500</div>
+      <div class="cell-3">6</div>
+      <div class="cell-3">00:08:05</div>
+    </div>
+    <div class="row-3">                             <!--    Задаем еще одну строку с четырьмя ячейками  -->
+      <div class="cell-3">СПБ</div>
+      <div class="cell-3">500</div>
+      <div class="cell-3">6</div>
+      <div class="cell-3">00:08:05</div>
+    </div>
+    </div>
+  </div>
+      
+   <!-- 22. Свойство "таблица" display: none; -->
+   <div class="theory">display: none; скрыть элемент, как будто его и не было. <br>
+        Скрытый элемент не отображается и не занимает места на странице.<br>
+        Применяется при создании выпадающих меню, динамических галерей, переключающихся вкладок и много где еще.<br>
+        visibility: hidden; «прячет» элемент — он становится невидимым, но занимает место на странице.<br>
+   </div>
+
+   <div class="table-4">                               
+    <div class="row-3">
+        <div class="cell-3">Город</div>
+        <div class="cell-3">Посещения</div>
+        <div class="cell-3">Страниц</div>
+        <div class="cell-3">Время</div>
+      </div>
+      <div class="row-3 row-1-none">
+        <div class="cell-3">СПБ</div>
+        <div class="cell-3">500</div>
+        <div class="cell-3">6</div>
+        <div class="cell-3">00:08:05</div>
+      </div>
+      <div class="row-3">                             <!--    Задаем еще одну строку с четырьмя ячейками  -->
+        <div class="cell-3 cell-3-1-none">СПБ</div>
+        <div class="cell-3">500</div>
+        <div class="cell-3">6</div>
+        <div class="cell-3">00:08:05</div>
+      </div>
+      </div>
+    </div>
+
+ <!-- 23. Испытание -->
+<div class="column-test">
+  <strong>Базовые</strong><br>
+  block<br>
+  inline<br>
+  list-item<br>
+  none
+</div>
+<div class="column-test">
+  <strong>Сложные</strong><br>
+  inline-block<br>
+  inline-table
+</div>
+<div class="table">
+  <div class="row-test">
+    <div class="cell-test col-1">
+      <strong>Табличные</strong>
+    </div>
+    <div class="cell-test col-2"></div>
+    <div class="cell-test col-3"></div>
+  </div>
+  <div class="row-test">
+    <div class="cell-test col-1">
+      table
+    </div>
+    <div class="cell-test col-2">
+      -row<br>
+      -cell<br>
+      -column<br>
+      -caption<br>
+    </div>
+    <div class="cell-test col-3">
+      строка<br>
+      ячейка<br>
+      колонка<br>
+      заголовок<br>
+    </div>
+  </div>
+</div>
+
+
+
+
+  </body>
+</html>
