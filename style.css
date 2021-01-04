@@ -1,0 +1,708 @@
+/* 1. Блочные боксы
+   2. Строчные боксы */
+p,
+div,
+h1,
+h2 {
+  margin: 10px;
+  padding: 10px;
+}
+
+p {
+    background-color: pink;
+}
+
+div {
+    background-color: grey;
+}
+
+h1 {
+    background-color: green;
+}
+
+h2 {
+    background-color: greenyellow;
+}
+
+/* 3. Ширина и высота*/
+
+.example {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 70px;
+  }
+
+/*  4. Внутренние отступы, свойство padding 
+       Внутренние отступы для разных сторон задаются с помощью свойств padding-top, padding-right, padding-bottom и padding-left: 
+       Одинаковые отступы со всех сторон.
+       Отступы сверху и снизу 5px, справа и слева 10px.
+       Отступ сверху 5px, слева и справа 10px, снизу 15px.
+       Разные отступы со всех сторон, в порядке верхний, правый, нижний, левый.
+       Для строчных боксов лучше не задавать вертикальных отступов, так как они ведут себя НЕПРЕДСКАЗУЕМО. */
+
+       .paddings, .p1, .p2, .p3 {
+        width: 350px;
+        height: 20px;
+        margin: 20px;
+        font-size: 12px;
+      }
+      
+      .p1 {
+        padding: 5px;
+      }
+      
+      .p2 {
+        padding: 5px 10px;
+      }
+      
+      .p3 {
+        padding: 5px 10px 30px;                /* padding строчного бокса вываливается с блочного бокса */
+        background-color: hotpink;
+        opacity: 0.6;
+      }
+
+    /* 5. Внешние отступы, свойство margin 
+          Свойство margin задаёт внешние отступы блока — отступы от внешней границы элемента до границ родительского элемента
+                                                         или до соседних элементов.
+          Внешние отступы для разных сторон задаются с помощью свойств margin-top, margin-right, margin-bottom и margin-left:
+          
+          margin: 10px;
+          margin: 5px 10px;
+          margin: 5px 10px 15px;
+          margin: 5px 10px 15px 20px;
+          
+          Одинаковые отступы со всех сторон.
+          Сверху и снизу 5px, справа и слева 10px.
+          Сверху 5px, слева и справа 10px, снизу 15px.
+          Верхний, правый, нижний, левый отступы соответственно.
+
+          Строчные боксы РЕАГИРУЮТ только на горизонтальные внешние отступы.*/
+
+          .out {
+            width: 280px;
+            margin: 20px;
+          }
+          
+          .m1 {
+            margin: 40px;                          /* можно как ужимать так и расширять блок*/
+                                                   /*Строчные боксы <span> РЕАГИРУЮТ только на горизонтальные внешние отступы.*/
+            background-color: yellow;
+          }
+          
+          .m2 {
+            margin: 10px 20px;
+            background-color: yellow;
+          }
+          
+          .m3 {
+             margin: 10px 20px 30px;
+             background-color: yellow;
+          }
+
+    /* 6. Рамки   
+    
+             selector {
+                  border-width: 5px;
+                  border-style: solid;      dashed        dotted
+                  border-color: red;
+                }*/
+
+
+                .b1, .b2, .b3 {
+                    width: 280px;
+                    height: 20px;
+                    margin: 20px;
+                    border: none;
+                  }
+                  
+                  span {
+                    border: none;
+                  }
+                  
+                  .b1 {
+                  border: 5px dashed green;
+                  }
+                  
+                  .b2 {
+                  border: 5px dotted green;
+                  }
+                  
+                  .b3 {
+                  border: 10px solid green;
+                  }
+
+    /* 7. Стандартная блочная модель    Вопрос:   Сколько же в итоге места будет занимать бокс?
+                                        Ответ:    Область, занимаемая блочным боксом, складывается из его ширины и высоты содержания,
+                                                   внутренних и внешних отступов, ширины рамок.
+ширина/высота содержания — свойства width и height (голубой прямоугольник на схеме);
+внутренние отступы — свойство padding;
+рамки — свойство border;
+внешние отступы — свойство margin.*/
+
+.block {
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+  
+}
+
+.block1 {
+  background-color: orange;
+}
+
+h3 {
+  background-color: green;
+}
+
+.block2 {
+  width: 200px;
+  padding-left:20px;
+  padding-right:20px;                           /*DevTools как только начнем padding-right начинаем увеличивать только пока не упрется в размер -- width: 200px*/
+  margin-bottom: 20px;                          /*DevTools как только начнем margin увеличивать или уменьшать хорошо видно (-40px элемент наезжает друг на друга*/
+}
+
+.block3 {
+  width: 200px;
+  border-width: 0;
+  border-style: solid;
+  border-color: #6a6a6a;
+  padding-left:20px;
+  padding-right:20px;
+  border-width: 10px;
+}
+
+/* 8. Испытание - блоки ставим на место*/
+
+.blocks-color {
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+
+.block-4 {
+  margin: 40px 360px 40px 0px;
+  height: 40px;
+}
+
+.block-5 {
+  margin: 40px 240px 40px 100px;
+  height: 100px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: white;
+
+}
+
+/* 9. «Схлопывание» внешних отступов */
+.block-margin {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.block-6 {
+ margin-bottom: 20px;
+}
+
+.block-7 {
+  margin-top: 40px;
+
+}
+
+/* 9. «Выпадание» внешних отступов */
+.block-8 {
+height: 100px;
+  border: none;
+  padding-top: 20px;
+  text-align: center;
+  margin-top: 40px;
+  border: 1px solid white;
+  background-color: #329ca7;
+}
+
+/* родитель элемент*/
+.block-9 { 
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* родитель элемент*/
+.block-10 {
+  height: 100px;
+  width: 200px;
+  text-align: center;
+  margin: 30px;
+  border: 1px solid white;
+  background-color: #329ca7;
+}
+
+.block-11 { 
+  margin: 50px 40px 10px 40px;
+  width: 800px;
+  text-align: center;
+}
+
+
+/* Избавляемся эффекта выпадания задаем - padding-top padding-bottom*/
+
+/* родитель элемент*/
+.block-12 {
+  height: 120px;
+  border: none;
+  padding-top: 30px;        /* теперь дочерний элемент упирается в верхний padding
+   и не выпадет, padding-bottom внизу не задан - выпадает*/
+  text-align: center;
+  border: 1px solid white;
+  background-color: #329ca7;
+}
+
+.block-13 { 
+  margin: 50px 40px 10px;
+  text-align: center;
+}
+
+/* 11.  Центруем блочные элементы  */
+selector {
+  width: 100px;
+  margin: 0 auto;
+}
+
+selector {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-14 {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 0 auto;         /* Центрируем блочный элемент 1-й вариант*/
+ /* margin-left: auto;     /* Центрируем блочный элемент 2-й вариант*/    
+  margin-right: auto;
+}
+
+/* 12.  Блочная модель и строчные боксы  */
+
+.example-1 {
+  padding: 5px;
+}
+
+em {
+  border-width: 0;
+  border-style: solid;
+  border-color: #6a6a6a;
+  padding: 10px;
+  margin: 10px;
+  border-width: 2px;
+}
+
+/* 13. Ширина 100% и ширина по умолчанию  */
+
+.block-15 { 
+  margin: 30px;
+  text-align: center;
+  width: 600px;
+}
+
+.example-2 {
+  padding: 30px 60px 0;
+  width: auto;
+  background-color: orange;
+}
+
+.example-3 {
+  padding: 30px 60px 0;
+  width: 100%;
+  border: 1px solid green;
+  background-color: orange;
+  margin: 20px 80px 20px 40px;
+}
+
+.color-block-15 {
+  background-color: orange;
+}
+
+/* 13Ширина 100% и ширина по умолчанию */
+
+.container {
+  width: 300px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 30px;
+  background-color: rgb(89, 104, 240);
+}
+
+.block18 {
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.block-18 {
+ padding: 20px;
+ background-color: rgb(134, 230, 163);
+ border: 1px solid rgba(40, 182, 40, 0.87);
+ width: auto; 
+}
+
+.block-19 {
+  padding: 20px;
+  background-color: rgb(134, 230, 163);
+  border: 1px solid rgba(40, 182, 40, 0.87);
+  width: 100%;
+}
+
+
+/* 14.  Особенности применения width: 100%  */
+
+.form {
+  background-color: rgb(214, 125, 207);
+  width: 400px;
+}
+
+.block-20 {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgb(233, 198, 134);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #666666;
+  border: 2px solid black;
+}
+                                     /* box-sizing: border-box; */
+input[type="text-1"] {
+  width: 100%;
+  box-sizing: border-box;            
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #1b0ce4;
+  border: 3px solid blue;
+}
+
+
+/* 15. Изменяем блочную модель, свойство box-sizing  */
+.example-4 {
+  padding: none;
+  width: 600px;
+  border: 5px solid green;
+  background-color: pink;
+  margin: 20px 10px 20px 10px;
+  /*display: flex;*/
+}
+
+.example-5 {
+    width: 590px;
+    box-sizing: border-box;
+    margin: 10px
+}
+
+.example-6 {
+    width: 590px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+textarea {
+  width: 596px;
+  box-sizing: border-box;
+}
+
+
+/* 16.   Второе испытание */
+
+/* Базовые стили, изменять не нужно */
+ .example-7 {
+  background-color: rgba(0, 255, 255, 0.2);
+  
+  height: auto;
+  width: 480px;
+ /*margin: 0 auto;*/
+ padding-top: 20px;
+ padding-right: 20px;
+ padding-left: 20px;
+ padding-bottom: 20px; 
+}  
+
+/* Пользовательские стили */
+.block-16 {
+  border-width: 20px;
+  border-style: solid;
+  border-color: pink;
+}
+
+.block-17 {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.text-input {
+  box-sizing: border-box;
+  width: 100%
+}
+
+/* 17. Управление типом бокса, свойство display */
+.paragraph-1 {
+  margin: 20px 0;
+  background-color: rgb(79, 116, 219);
+}
+
+.strong-1 {
+  background-color: rgb(177, 228, 95);
+}
+                                                          /* display: inline; */
+.paragraph-2 {
+  margin: 20px 0;
+  display: inline;
+  background-color: rgb(79, 116, 219);
+}
+           
+.strong-2 {                                  
+   background-color: rgb(177, 228, 95);
+}
+
+.paragraph-3 {
+margin: 20px 0;
+
+background-color: rgb(79, 116, 219);
+}
+                                                          /* display: block; */
+.strong-3 {
+display: block;                                  
+background-color: rgb(177, 228, 95);
+}
+
+/* 18. Свойство display: inline-block */
+
+
+.column {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  background-image: linear-gradient(to left,#9fd8ef,#9fd8ef),linear-gradient(to left,rgba(136,123,215,.5),rgba(136,123,215,.5));
+  border-color: #6a6a6a;
+  background-clip: content-box, padding-box; 
+  box-shadow: 0 0 2px #000;
+  font-weight: 400;
+}
+
+.column-1 {
+  height: 40px;
+}
+
+.column-2 {
+  height: 60px;
+}
+
+.column-3 {
+  height: 80px;
+}
+
+.column-ib {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  background-image: linear-gradient(to left,#9fd8ef,#9fd8ef),linear-gradient(to left,rgba(136,123,215,.5),rgba(136,123,215,.5));
+  border-color: #6a6a6a;
+  background-clip: content-box, padding-box; 
+  box-shadow: 0 0 2px #000;
+  font-weight: 400;
+
+  display: inline-block;                              /* display: inline-block; */  
+  vertical-align: bottom;                             /* выравнивание по верху или по низу */
+  width: 340px;                                       /* ширина для всех */
+}
+
+.column-4 {
+  height: 50px;                                       /* высота для каждого */
+}
+
+.column-5 {
+  height: 90px;                                       /* высота для каждого */
+}
+
+.column-6 {
+  height: 130px;                                      /* высота для каждого */
+}
+
+/* 18. Свойство  display: table;   - таблица*/
+
+.table-border {
+  margin: 5px;
+  padding: 5px;
+  border: 1px dotted white;
+}
+
+.table {
+  background-color: #d9edf7;
+  border-color: #3a87ad;
+  display: table;                                    /* display: table; */
+}
+
+.row {
+  background-color: #f2dede;
+  border-color: rgb(70, 2, 2);
+  border: 1px dotted rgb(71, 2, 2);
+}
+
+.cell {
+  background-color: #fbeed5;
+  border-color: #c09853;
+}
+
+/* 20. Свойство  display: table-row; */
+
+.table-border-1 {
+  margin: 5px;
+  padding: 5px;
+  border: 1px dotted white;
+   
+}
+
+.table-1 {
+  background-color: #d9edf7;
+  border-color: #3a87ad;
+  display: table;
+  
+}
+
+.row-1 {
+  background-color: #f2dede;
+  border-color: rgb(70, 2, 2);
+  border: 1px dotted rgb(71, 2, 2);
+  display: table-row;                                    /* display: table-row; (table-cell; создает две колонки)*/  
+}
+
+.cell {
+  background-color: #fbeed5;
+  border-color: #c09853;
+}
+
+/* 20. Свойство  display: table-cell; */
+
+.table-border-2 {
+  margin: 10px;
+  padding: 10px;
+  border: 1px dotted rgb(3, 23, 114);
+}
+
+.table-2 {
+  display: table;
+  background-color: #d9edf7;
+  border-color: #3a87ad;
+ 
+  display: table-row;                                      /* Родителю задаем для расположения 2-х таблиц горизонтально*/
+  padding: 0;                                              /* 0 отступы по таблице */
+  
+}
+
+.row-2 {
+  display: table-row;
+  background-color: #f2dede;
+  border-right: 5px dotted orangered;
+  border-color: #b94a48;
+  display: table-cell;                                      /* display: table-cell; -  создает две колонки в таблице - вертикально */  
+}
+
+.cell {
+  background-color: #fbeed5;
+  border-color: #c09853;
+  border: 1px dotted rgb(3, 23, 114);  
+}
+
+.row-3 {
+  display: table-row;
+  background-color: #f2dede;
+  border-color: #b94a48;
+  border: 1px dotted rgb(3, 23, 114);
+  
+}
+
+.cell-3 {
+  background-color: #fbeed5;
+  border-color: #c09853;
+  display: table-cell;                                       /* display: table-cell; -  создает две колонки в таблице - горизонтально */  
+  border: 1px dotted rgb(3, 23, 114);
+}
+
+.table-3 {
+    padding: 10px;                                              /* внутренние отступы по таблице - padding - цвет - grey*/
+    margin-left: 80px;                                              /* внешние отступы по таблице - margin */
+    border-spacing: 5px;                                            /* Отступы между ячейками- цвет - grey */
+}
+
+/* 22. Свойство "таблица" display: none; */
+
+.theory {
+  background-color: rgb(161, 233, 243);
+}
+
+.table-4 {
+  padding: 10px;                                              /* внутренние отступы по таблице - padding - цвет - grey*/
+  margin-left: 80px;                                              /* внешние отступы по таблице - margin */
+  border-spacing: 5px;                                            /* Отступы между ячейками- цвет - grey */
+  display: table-row;
+}
+
+.row-1-none {
+  /*display: none;*/
+  visibility: hidden;
+}
+.cell-3-1-none {
+  /*display: none;*/
+  visibility: hidden;
+}
+
+/* 23. Испытание */
+
+/* Базовые стили, изменять не нужно */
+.column-test {
+  margin-bottom: 20px;
+  margin-right: 16px;
+  padding: 10px;
+
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.cell-test {
+  padding: 5px 9px;
+
+  background-color: rgba(0, 255, 255, 0.2);
+  border: 2px solid white;
+}
+
+/* Cтили, которые нужно изменять */
+.column-test {
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+table {
+  padding: 0px;                                              
+}
+
+.cell-test {
+display: table-cell;
+width: 100px;
+}
+
+.col-3 {
+ display:none;
+}
